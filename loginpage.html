@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        form fieldset{
+            height: auto;
+            width: fit-content;
+            margin-left: 43%;
+        }
+        #terms{
+            margin-left: 43%;
+        }
+        #login{
+            margin-left: 43%;
+        }
+        #create{
+            margin-left: 1%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Admin Login</h1>
+    <h1 align="center">Admin Login</h1>
     <form>
         <fieldset>
             <legend>Account Details</legend>
@@ -16,14 +32,7 @@
 
             <label>Password:</label>
             <input type="password" id="password" name="password" placeholder="999999999">
-            <br><br>
-
-            <label>Role:</label>
-            <input type="radio" id="admin" name="role">
-            <label>Admin</label>
-
-            <input type="radio" id="user" name="role" checked>
-            <label>User</label>
+            <br>
         </fieldset>
 
         <br>
@@ -31,10 +40,10 @@
         <input type="checkbox" id="terms">
         <label>Remember Me</label>
 
-        <br>
+        <br><br>
 
-        <input type="submit" id="register" name="register" value="Register">
-        <input type="reset" id="reset" name="reset">
+        <input type="submit" id="login" name="Login" value="Login">
+        <input type="submit" id="create" value="Create a New Account">
     </form>
     <br>
     <footer>
