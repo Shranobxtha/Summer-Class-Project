@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Document</title>
     <style>
         form fieldset{
             height: auto;
             width: fit-content;
             margin-left: 43%;
         }
-        #terms{
+        #accept{
             margin-left: 43%;
         }
-        #login{
+        #signup{
             margin-left: 43%;
-        }
-        #create{
-            margin-left: 1%;
         }
     </style>
 </head>
 <body>
-    <h1 align="center">Admin Login</h1>
+<h1 align="center">Create Account</h1>
     <form>
         <fieldset>
             <legend>Account Details</legend>
@@ -37,17 +34,13 @@
 
         <br>
 
-        <input type="checkbox" id="terms">
-        <label>Remember Me</label>
+        <input type="checkbox" id="accept">
+        <label>I agree to create an account.</label>
 
         <br><br>
 
-        <input type="submit" id="login" name="Login" value="Login">
-        <input type="submit" id="create" value="Create a New Account" onclick="window.location.href='create.html'; return false;">
+        <input type="submit" id="signup" name="Sign Up" value="Sign Up">
     </form>
     <br>
-    <footer>
-        &copy; 2026 My Inventory System. All rights reserved.
-    </footer>
 </body>
 </html>
