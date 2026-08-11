@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Product · GODAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/product-form.css" />
+  <link rel="stylesheet" href="css/product-detail.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand-mark">GODAM</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav">
+      <a href="products.html" class="active">Products</a>
+      <a href="suppliers.html">Suppliers</a>
+    </nav>
+    <div class="user-info">
+      <span class="username" id="navUsername"></span>
+      <button class="logout-btn" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-header">
+      <div>
+        <div class="meta-label">Inventory</div>
+        <h1 id="pageHeading">Product</h1>
+      </div>
+      <a href="products.html" class="btn btn-secondary">← Back to products</a>
+    </div>
+
+    <div class="banner banner-error" id="loadError"></div>
+
+    <div class="detail-panel" id="detailPanel" style="display:none;">
+      <div class="detail-image">
+        <div class="image-preview" id="imagePreview">
+          <span class="meta-label">No image</span>
+        </div>
+      </div>
+
+      <div class="detail-info">
+        <div class="detail-top">
+          <h2 id="productName"></h2>
+          <span class="low-tag" id="lowStockTag" style="display:none;">Low stock</span>
+        </div>
+
+        <p class="detail-description" id="productDescription"></p>
+
+        <div class="detail-stats">
+          <div class="stat">
+            <div class="meta-label">Price</div>
+            <div class="stat-value" id="productPrice"></div>
+          </div>
+          <div class="stat">
+            <div class="meta-label">Quantity</div>
+            <div class="stat-value" id="productQuantity"></div>
+          </div>
+        </div>
+
+        <div class="detail-supplier">
+          <div class="meta-label">Supplier</div>
+          <div class="supplier-card" id="supplierCard"></div>
+        </div>
+
+        <div class="detail-actions">
+          <a href="#" class="btn btn-primary" id="editLink">Edit product</a>
+          <button class="btn btn-secondary" id="deleteBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

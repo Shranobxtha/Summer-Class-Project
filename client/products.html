@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products · GODAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/products.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand-mark">GODAM</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav">
+      <a href="products.html" class="active">Products</a>
+      <a href="suppliers.html">Suppliers</a>
+    </nav>
+    <div class="user-info">
+      <span class="username" id="navUsername"></span>
+      <button class="logout-btn" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-header">
+      <div>
+        <div class="meta-label">Inventory</div>
+        <h1>Products</h1>
+      </div>
+      <a href="product-form.html" class="btn btn-primary">+ Add product</a>
+    </div>
+
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Search products by name..." />
+      <select id="supplierFilter">
+        <option value="">All suppliers</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table id="productsTable" style="display:none;">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Supplier</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="productsBody"></tbody>
+      </table>
+      <div class="empty-state" id="emptyState">
+        <div class="meta-label">No products found</div>
+        <p>Try a different search, or add your first product.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/products.js"></script>
+</body>
+</html>

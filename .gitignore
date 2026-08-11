@@ -1,0 +1,10 @@
+# Server (Node/Express)
+server/node_modules/
+server/.env
+server/database.sqlite
+server/uploads/*
+!server/uploads/.gitkeep
+
+# OS/editor cruft
+.DS_Store
+*.log

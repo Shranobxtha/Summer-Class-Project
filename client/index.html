@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GODAM · Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+
+  <div class="login-screen">
+    <!-- LEFT: brand panel -->
+    <div class="brand-panel">
+      <div class="brand-mark">GODAM</div>
+      <p class="brand-tagline">Track every item, every supplier, every shelf.</p>
+      <div class="brand-foot">
+        <span class="meta-label">Back-office access</span>
+        <div class="barcode" aria-hidden="true">
+          <span style="height:24px"></span>
+          <span style="height:36px"></span>
+          <span style="height:18px"></span>
+          <span style="height:40px"></span>
+          <span style="height:28px"></span>
+          <span style="height:36px"></span>
+          <span style="height:20px"></span>
+          <span style="height:32px"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: login ticket -->
+    <div class="login-wrap">
+      <div class="ticket">
+        <div class="ticket-id">
+          <span>GODAM-ACCESS-01</span>
+          <span id="ticketDate"></span>
+        </div>
+        <h1>Sign in</h1>
+        <p class="sub">Admin access is required to view or edit inventory.</p>
+
+        <div class="banner banner-error" id="loginError"></div>
+
+        <form id="loginForm" novalidate>
+          <div class="field" id="usernameField">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autocomplete="username" />
+            <div class="error-text">Username is required</div>
+          </div>
+
+          <div class="field" id="passwordField">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" autocomplete="current-password" />
+            <div class="error-text">Password is required</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="loginBtn">Enter warehouse</button>
+        </form>
+
+        <p class="hint">Default login: admin / admin123</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

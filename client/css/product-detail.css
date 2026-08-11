@@ -1,0 +1,86 @@
+.detail-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+}
+
+.detail-image .image-preview {
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0;
+}
+
+.detail-top {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+.detail-top h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.detail-description {
+  color: var(--text-muted);
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+.detail-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.detail-supplier {
+  margin-bottom: 1.8rem;
+}
+.supplier-card {
+  margin-top: 0.5rem;
+  background: var(--panel-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+}
+.supplier-card .supplier-name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.supplier-card .supplier-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.detail-actions .btn-secondary:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+@media (max-width: 720px) {
+  .detail-panel {
+    grid-template-columns: 1fr;
+  }
+  .detail-image .image-preview {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+}

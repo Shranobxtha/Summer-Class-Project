@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Add Product · GODAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/product-form.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand-mark">GODAM</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav">
+      <a href="products.html" class="active">Products</a>
+      <a href="suppliers.html">Suppliers</a>
+    </nav>
+    <div class="user-info">
+      <span class="username" id="navUsername"></span>
+      <button class="logout-btn" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-header">
+      <div>
+        <div class="meta-label">Inventory</div>
+        <h1 id="formHeading">Add product</h1>
+      </div>
+      <a href="products.html" class="btn btn-secondary">← Back to products</a>
+    </div>
+
+    <div class="form-panel">
+      <div class="banner banner-error" id="formError"></div>
+
+      <form id="productForm" novalidate>
+        <div class="form-grid">
+
+          <!-- LEFT: text fields -->
+          <div class="form-col">
+            <div class="field" id="nameField">
+              <label for="name">Product name</label>
+              <input type="text" id="name" name="name" />
+              <div class="error-text">Product name is required</div>
+            </div>
+
+            <div class="field" id="descriptionField">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+
+            <div class="field-row">
+              <div class="field" id="priceField">
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" step="0.01" min="0" />
+                <div class="error-text">Price is required and cannot be negative</div>
+              </div>
+
+              <div class="field" id="quantityField">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" step="1" min="0" />
+                <div class="error-text">Quantity is required and cannot be negative</div>
+              </div>
+            </div>
+
+            <div class="field" id="supplierField">
+              <label for="supplierSelect">Supplier</label>
+              <select id="supplierSelect" name="supplierId">
+                <option value="">Select a supplier...</option>
+                <option value="__new__">+ Add new supplier</option>
+              </select>
+              <div class="error-text">Please select a supplier</div>
+            </div>
+
+            <!-- Hidden until "+ Add new supplier" is picked above -->
+            <div class="inline-supplier" id="inlineSupplier" hidden>
+              <div class="meta-label">New supplier</div>
+              <div class="banner banner-error" id="supplierError"></div>
+
+              <div class="field" id="newSupplierNameField">
+                <label for="newSupplierName">Supplier name</label>
+                <input type="text" id="newSupplierName" />
+                <div class="error-text">Supplier name is required</div>
+              </div>
+              <div class="field" id="newSupplierEmailField">
+                <label for="newSupplierEmail">Contact email</label>
+                <input type="email" id="newSupplierEmail" />
+                <div class="error-text">A valid contact email is required</div>
+              </div>
+              <div class="field" id="newSupplierPhoneField">
+                <label for="newSupplierPhone">Phone</label>
+                <input type="text" id="newSupplierPhone" />
+                <div class="error-text">Phone number is required</div>
+              </div>
+
+              <div class="inline-supplier-actions">
+                <button type="button" class="btn btn-secondary" id="cancelSupplierBtn">Cancel</button>
+                <button type="button" class="btn btn-primary" id="saveSupplierBtn">Save supplier</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: image upload -->
+          <div class="form-col form-col-image">
+            <div class="field">
+              <label for="imageInput">Product image</label>
+              <div class="image-preview" id="imagePreview">
+                <span class="meta-label">No image selected</span>
+              </div>
+              <input type="file" id="imageInput" name="image" accept="image/png, image/jpeg, image/webp, image/gif" />
+              <p class="field-hint">JPG, PNG, WEBP or GIF. Max 5MB.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-actions">
+          <a href="products.html" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Save product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/supplier-fields.js"></script>
+  <script src="js/product-form.js"></script>
+</body>
+</html>

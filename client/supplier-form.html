@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Add Supplier · GODAM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/products.css" />
+  <link rel="stylesheet" href="css/product-form.css" />
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand-mark">GODAM</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <nav id="mainNav">
+      <a href="products.html">Products</a>
+      <a href="suppliers.html" class="active">Suppliers</a>
+    </nav>
+    <div class="user-info">
+      <span class="username" id="navUsername"></span>
+      <button class="logout-btn" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <div class="page-header">
+      <div>
+        <div class="meta-label">Inventory</div>
+        <h1 id="formHeading">Add supplier</h1>
+      </div>
+      <a href="suppliers.html" class="btn btn-secondary">← Back to suppliers</a>
+    </div>
+
+    <div class="form-panel form-panel-narrow">
+      <div class="banner banner-error" id="formError"></div>
+
+      <!-- Same 3 fields, same ids/structure as the inline "+ Add new supplier" box on
+           product-form.html - both use validateSupplierFields() from supplier-fields.js -->
+      <form id="supplierForm" novalidate>
+        <div class="field" id="nameField">
+          <label for="name">Supplier name</label>
+          <input type="text" id="name" />
+          <div class="error-text">Supplier name is required</div>
+        </div>
+
+        <div class="field" id="emailField">
+          <label for="email">Contact email</label>
+          <input type="email" id="email" />
+          <div class="error-text">A valid contact email is required</div>
+        </div>
+
+        <div class="field" id="phoneField">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" />
+          <div class="error-text">Phone number is required</div>
+        </div>
+
+        <div class="form-actions">
+          <a href="suppliers.html" class="btn btn-secondary">Cancel</a>
+          <button type="submit" class="btn btn-primary" id="submitBtn">Save supplier</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/supplier-fields.js"></script>
+  <script src="js/supplier-form.js"></script>
+</body>
+</html>
