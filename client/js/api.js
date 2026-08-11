@@ -6,7 +6,7 @@
 // after you deploy to Render (it's shown at the top of your service's Render dashboard,
 // looks like https://your-service-name.onrender.com).
 const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-const RENDER_BACKEND_URL = 'https://summer-class-project-server.onrender.com'; // <-- update this after deploying
+const RENDER_BACKEND_URL = 'https://summer-class-project-server.onrender.com';
 
 const SERVER_BASE = isLocal ? 'http://localhost:5000' : RENDER_BACKEND_URL;
 const API_BASE = `${SERVER_BASE}/api`;

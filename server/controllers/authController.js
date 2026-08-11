@@ -33,6 +33,7 @@ async function login(req, res) {
 
     res.json({ token, username: user.username });
   } catch (err) {
+    console.error('Login error:', err);
     res.status(500).json({ error: 'Something went wrong while logging in' });
   }
 }
