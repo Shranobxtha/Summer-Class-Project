@@ -31,6 +31,14 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 5000;
 
+// Check this at startup, not just when someone tries to log in - a missing/empty
+// JWT_SECRET would otherwise crash silently on the first login attempt with a
+// generic 500, which is exactly what happened during deployment.
+if (!process.env.JWT_SECRET) {
+  console.error('FATAL: JWT_SECRET is not set. Add it in your environment variables (Render: Environment tab).');
+  process.exit(1);
+}
+
 async function start() {
   try {
     await sequelize.authenticate();
